@@ -130,7 +130,12 @@
 
                             nv.addGraph(function() {
                                 // Update the chart when window resizes
-                                nv.utils.windowResize(function() { scope.chart.update(); });
+                                nv.utils.windowResize(function() { 
+                                    if (scope.chart) {
+                                        scope.chart.update(); 
+                                    }
+                                    
+                                });
                                 return scope.chart;
                             }, options.chart['callback']);
                         },
